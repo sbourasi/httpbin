@@ -1,0 +1,15 @@
+...
+  pre_build:
+    commands:
+      - echo Logging in to Docker Hub...
+      # Type the command to log in to your Docker Hub account here.          
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build -t httpf:2.2 .
+      - docker tag $httpf:2.2 httpf:2.2
+  post_build:
+    commands:
+      - echo Build completed on `date`
+...
